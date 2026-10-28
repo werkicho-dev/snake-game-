@@ -185,6 +185,24 @@ function move() {
     draw();
 }
 
+function changeDirection(direction) {
+    if (!running) return;
+
+    if (direction === "UP" && dy !== 1) {
+        dx = 0;
+        dy = -1;
+    } else if (direction === "DOWN" && dy !== -1) {
+        dx = 0;
+        dy = 1;
+    } else if (direction === "LEFT" && dx !== 1) {
+        dx = -1;
+        dy = 0;
+    } else if (direction === "RIGHT" && dx !== -1) {
+        dx = 1;
+        dy = 0;
+    }
+}
+
 document.addEventListener("keydown", function(event) {
     if (!running) return;
 
